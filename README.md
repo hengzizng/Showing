@@ -1,12 +1,35 @@
-## 🗨️ 프로젝트 소개
+## 🗨️ Showing
 
-뮤지컬/연극 소비자의 더 나은 경험과 선택을 위하여 <br>공연의 세부 정보를 통한 뮤지컬/연극 추천 데이터 및 리뷰 분석을 통한 키워드 워드클라우드를 제공합니다.<br>각 공연 당 별점 평가와 리뷰 작성이 가능하며, 다른 사람들의 리뷰 또한 확인 가능합니다.
+> Showingd은 뮤지컬/연극 소비자의 더 나은 경험과 선택을 위하여 공연의 세부 정보를 통한 뮤지컬/연극 추천 데이터 및 리뷰 분석을 통한 키워드 워드클라우드를 제공합니다.  
+> 각 공연 당 별점 평가와 리뷰 작성이 가능하며, 다른 사람들의 리뷰 또한 확인 가능합니다.
 
-![슬라이드1](/uploads/72beaee38981b9bd88e9c7ef6e057cc3/슬라이드1.PNG)
+<br>
 
-![슬라이드2](/uploads/a63b786b3d8a2160dc6b137de0114d54/슬라이드2.PNG)
+## ✨ 주요 페이지
 
-![슬라이드3](/uploads/b5a4e83e1365d052864b903a35bf6372/슬라이드3.PNG)
+- 메인 페이지
+
+  ![](exec/main1.png)
+  ![](exec/main2.png)
+  ![](exec/main3.png)
+  ![](exec/main4.png)
+  ![](exec/main5.png)
+
+- 공연 상세
+
+  ![](exec/show1.png)
+  ![](exec/show2.png)
+  ![](exec/show3.png)
+
+- 리뷰
+
+  ![](exec/review.png)
+
+- 마이 페이지
+
+  ![](exec/user1.png)
+  ![](exec/user2.png)
+  ![](exec/user3.png)
 
 <br>
 
@@ -27,6 +50,10 @@ Data : 고주희, 김민준, 송예진, 이명주
 Hadoop : 김혜지, 최혜린
 
 <br>
+
+## 🏭 아키텍처
+
+![](exec/architecture.png)
 
 ## 🔨 기술스택
 
@@ -73,11 +100,11 @@ Hadoop : 김혜지, 최혜린
 
 ### 화면 설계
 
-[![Group_24](https://lab.ssafy.com/s06-bigdata-dist-sub2/S06P22A301/uploads/bfc9f2ff63a8158f442c538706df0880/Group_24.png)](https://lab.ssafy.com/s06-bigdata-dist-sub2/S06P22A301/uploads/bfc9f2ff63a8158f442c538706df0880/Group_24.png)
+![](exec/uiux.png)
 
 ### ERD
 
-[![ourerd_ver2__2_](https://lab.ssafy.com/s06-bigdata-dist-sub2/S06P22A301/uploads/4617c4334bc7ae88689d184c1837ef94/ourerd_ver2__2_.png)](https://lab.ssafy.com/s06-bigdata-dist-sub2/S06P22A301/uploads/4617c4334bc7ae88689d184c1837ef94/ourerd_ver2__2_.png)
+![](exec/erd.png)
 
 ### API
 
@@ -85,22 +112,58 @@ Hadoop : 김혜지, 최혜린
 
 <br>
 
-
 ## 🏗️ 빌드 방법
 
 원격의 git 저장소를 로컬에 복제
 
 ```shell
-git clone
+git clone https://github.com/hengzizng/Showing.git
 ```
+
+### 백엔드
+
+`DBDump.sql` 파일을 통해 로컬 MySQL에 DB 스키마를 생성
+
+`application-prod.properties` 의 `spring.datasource.username` 과 `spring.datasource.password` 항목들을 로컬 MySQL에 만들어둔 정보에 맞춰 변경
+
+backend 프로젝트를 빌드
+
+```shell
+cd backend
+./gradlew clean build
+```
+
+`./gradlew: command not found` 오류가 발생한다면 gradlew에 실행 권한을 부여
+
+```shell
+chmod +x gradlew
+```
+
+생성된 jar 파일로 프로젝트를 실행
+
+```shell
+java -jar build/libs/backend-0.0.1-SNAPSHOT.jar
+```
+
+서비스 swagger 주소에 접속해 실행을 확인합니다.
+
+- http://localhost:8081/swagger-ui/
+
+### 프론트엔드
 
 npm을 이용하여 필요한 패키지 설치
 
 ```shell
+cd frontend
 npm install
 ```
 
 웹팩 개발 서버 구동
+
 ```shell
 npm run serve
 ```
+
+서비스 주소에 접속
+
+- http://localhost:8080
