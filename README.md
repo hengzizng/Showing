@@ -145,7 +145,7 @@ chmod +x gradlew
 java -jar build/libs/backend-0.0.1-SNAPSHOT.jar
 ```
 
-서비스 swagger 주소에 접속해 실행을 확인합니다.
+서비스 swagger 주소에 접속해 실행을 확인
 
 - http://localhost:8081/swagger-ui/
 
