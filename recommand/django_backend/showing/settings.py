@@ -87,7 +87,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'test',
         'USER': 'ssafy',
-        'PASSWORD': 'a301showing',
+        'PASSWORD': '',
         'HOST': 'j6a301.p.ssafy.io',
         'PORT': '3306'
     }

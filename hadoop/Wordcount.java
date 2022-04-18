@@ -117,7 +117,7 @@ public class Wordcount {
                 "com.mysql.jdbc.Driver", // driver class
                 "jdbc:mysql://localhost:3306/test?serverTimezone=Asia/Seoul", // db url
                 "ssafy", // user name
-                "a301showing" // password
+                "" // password
         );
 
         String[] otherArgs = new GenericOptionsParser(conf, args).getRemainingArgs();
